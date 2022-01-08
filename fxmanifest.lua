@@ -8,3 +8,7 @@ version "0.1"
 client_scripts {
 	"cl_*.*"
 }
+
+dependencies {
+	"/onesync"
+}

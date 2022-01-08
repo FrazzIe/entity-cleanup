@@ -26,6 +26,9 @@ function onCleanupVehicle() {
 		// store vehicle network id for deletion
 		vehicles[vehicles.length] = NetworkGetNetworkIdFromEntity(handle);
 	});
+
+	// send collection of vehicles for deletion
+	emitNet("entity-cleanup:finish", vehicles);
 }
 
 on("entity-cleanup:vehicle", onCleanupVehicle);

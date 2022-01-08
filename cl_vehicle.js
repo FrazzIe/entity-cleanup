@@ -1,5 +1,5 @@
 /**
- * Remove all vehicles nearby client
+ * Collect vehicles nearby client for deletion
  */
 function onCleanupVehicle() {
 	const vehicles = [];

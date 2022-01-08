@@ -7,7 +7,13 @@ function onCleanupVehicle() {
 	const lastVehicle = GetVehiclePedIsIn(ped, true);
 
 	forEachInGamePool("CVehicle", (handle) => {
+		// ignore client current and last vehicle
 		if (handle == curVehicle || handle == lastVehicle) {
+			return;
+		}
+		
+		// ignore if vehicle is occupied
+		if (GetVehicleNumberOfPassengers(handle) > 0 || IsVehicleSeatFree(handle, -1) == false) {
 			return;
 		}
 	});

@@ -1,8 +1,8 @@
 /**
  * Remove all vehicles nearby client
  */
-function onVehicleCleanup() {
+function onCleanupVehicle() {
 
 }
 
-on("entity-cleanup:vehicle", onVehicleCleanup);
+on("entity-cleanup:vehicle", onCleanupVehicle);

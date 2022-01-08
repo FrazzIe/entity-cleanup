@@ -6,6 +6,11 @@ function onCleanupVehicle() {
 	const curVehicle = GetVehiclePedIsIn(ped, false);
 	const lastVehicle = GetVehiclePedIsIn(ped, true);
 
+	forEachInGamePool("CVehicle", (handle) => {
+		if (handle == curVehicle || handle == lastVehicle) {
+			return;
+		}
+	});
 }
 
 on("entity-cleanup:vehicle", onCleanupVehicle);

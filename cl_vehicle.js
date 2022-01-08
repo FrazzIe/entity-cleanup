@@ -16,6 +16,11 @@ function onCleanupVehicle() {
 		if (GetVehicleNumberOfPassengers(handle) > 0 || IsVehicleSeatFree(handle, -1) == false) {
 			return;
 		}
+
+		// ignore if vehicle isn't networked
+		if (NetworkGetEntityIsNetworked(handle) == false) {
+			return;
+		}
 	});
 }
 

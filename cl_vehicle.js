@@ -13,3 +13,5 @@ function onVehicle(poolName, handle) {
 function onVehicleCleanup() {
 
 }
+
+on("entity-cleanup:vehicle", onVehicleCleanup);

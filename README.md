@@ -1,3 +1,3 @@
-# vehicle-cleanup
+# entity-cleanup
 
-A small script to cleanup nearby vehicles
+A small script to cleanup nearby entities

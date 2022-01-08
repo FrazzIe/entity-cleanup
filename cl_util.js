@@ -9,6 +9,6 @@
 	const pool = GetGamePool(poolName);
 	
 	for (let i = 0; i < pool.length; i++) {
-		fn(poolName, pool[i]);
+		fn(pool[i]);
 	}
 }

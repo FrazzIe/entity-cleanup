@@ -2,6 +2,7 @@
  * Remove all vehicles nearby client
  */
 function onCleanupVehicle() {
+	const vehicles = [];
 	const ped = PlayerPedId();
 	const curVehicle = GetVehiclePedIsIn(ped, false);
 	const lastVehicle = GetVehiclePedIsIn(ped, true);
@@ -21,6 +22,9 @@ function onCleanupVehicle() {
 		if (NetworkGetEntityIsNetworked(handle) == false) {
 			return;
 		}
+
+		// store vehicle network id for deletion
+		vehicles[vehicles.length] = NetworkGetNetworkIdFromEntity(handle);
 	});
 }
 

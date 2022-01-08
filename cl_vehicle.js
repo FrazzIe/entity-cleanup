@@ -6,3 +6,10 @@
 function onVehicle(poolName, handle) {
 
 }
+
+/**
+ * Remove all vehicles nearby client
+ */
+function onVehicleCleanup() {
+
+}

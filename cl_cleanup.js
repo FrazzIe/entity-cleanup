@@ -15,7 +15,7 @@ function onCleanup(src /* unused */, args) {
 		case "vehicle":
 		case "object":
 		case "ped":
-			emitNet(`entity-cleanup:${target}`);
+			emit(`entity-cleanup:${target}`);
 		default:
 			console.log("Invalid argument passed");
 	}

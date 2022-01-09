@@ -16,8 +16,10 @@ function onCleanup(src /* unused */, args) {
 		case "object":
 		case "ped":
 			emit(`entity-cleanup:${target}`);
+			break;
 		default:
 			console.log("Invalid argument passed");
+			break;
 	}
 }
 

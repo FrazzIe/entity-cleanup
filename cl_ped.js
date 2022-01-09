@@ -10,7 +10,12 @@ function onCleanupPed() {
 		if (handle == ped) {
 			return;
 		}
-		
+
+		// ignore ped if player
+		if (IsPedAPlayer(handle) == true) {
+			return;
+		}
+
 		// ignore if ped isn't networked
 		if (NetworkGetEntityIsNetworked(handle) == false) {
 			return;

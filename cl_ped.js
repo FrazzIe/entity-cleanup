@@ -3,8 +3,14 @@
  */
 function onCleanupPed() {
 	const peds = [];
+	const ped = PlayerPedId();
 
 	forEachInGamePool("CPed", (handle) => {
+		// ignore ped if client
+		if (handle == ped) {
+			return;
+		}
+		
 		// ignore if ped isn't networked
 		if (NetworkGetEntityIsNetworked(handle) == false) {
 			return;

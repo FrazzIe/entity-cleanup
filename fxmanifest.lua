@@ -9,6 +9,10 @@ client_scripts {
 	"cl_*.*"
 }
 
+server_scripts {
+	"sv_*.*"
+}
+
 dependencies {
 	"/onesync"
 }

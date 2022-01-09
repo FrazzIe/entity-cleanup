@@ -4,12 +4,14 @@
  * @param {string[]} args array of command arguments
  */
 function onCleanup(src /* unused */, args) {
-	const target = args[0].toLowerCase();
+	let target = args[0];
 
 	if (target == null) {
 		console.log("Invalid argument passed");
 		return;
 	}
+
+	target = target.toLowerCase();
 
 	switch(target) {
 		case "vehicle":

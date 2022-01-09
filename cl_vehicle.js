@@ -12,10 +12,23 @@ function onCleanupVehicle() {
 		if (handle == curVehicle || handle == lastVehicle) {
 			return;
 		}
-		
-		// ignore if vehicle is occupied
+
+		// check if vehicle is occupied
 		if (GetVehicleNumberOfPassengers(handle) > 0 || IsVehicleSeatFree(handle, -1) == false) {
-			return;
+			const modelHash = GetEntityModel(handle);
+			const numSeats = GetVehicleModelNumberOfSeats(modeHash);
+			
+			// ignore if any passenger is alive
+			// ignore if any passenger is a player
+			for (let i = -1; i < numSeats; i++) {
+				if (IsVehicleSeatFree(handle, i) == false) {
+					const passenger = GetPedInVehicleSeat(handle, i);
+
+					if (IsPedAPlayer(passenger) == true || IsEntityDead(passenger) == false) {
+						return;
+					}
+				}
+			}
 		}
 
 		// ignore if vehicle isn't networked

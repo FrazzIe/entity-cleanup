@@ -14,7 +14,7 @@ A small script to cleanup nearby entities
 	- [ ] Unetworked entities
 - Deletes
 	- [x] Vehicles
-	- [ ] Peds
+	- [x] Peds
 	- [ ] Objects
 
 ## Usage

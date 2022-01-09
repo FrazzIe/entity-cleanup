@@ -16,6 +16,11 @@ function onCleanupPed() {
 			return;
 		}
 
+		// ignore ped if in vehicle
+		if (GetVehiclePedIsIn(handle, false) != 0) {
+			return;
+		}
+
 		// ignore if ped isn't networked
 		if (NetworkGetEntityIsNetworked(handle) == false) {
 			return;

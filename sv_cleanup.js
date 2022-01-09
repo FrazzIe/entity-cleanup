@@ -9,4 +9,4 @@ function onCleanupFinish(entities) {
 	}
 }
 
-on("entity-cleanup:finish", onCleanupFinish);
+onNet("entity-cleanup:finish", onCleanupFinish);

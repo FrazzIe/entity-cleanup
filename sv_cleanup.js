@@ -5,7 +5,9 @@
 function onCleanupFinish(entities) {
 	// delete entities
 	for (let i = 0; i < entities.length; i++) {
-		DeleteEntity(entities[i]);
+		const handle = NetworkGetEntityFromNetworkId(entities[i]);
+
+		DeleteEntity(handle);
 	}
 }
 

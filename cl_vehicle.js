@@ -16,7 +16,7 @@ function onCleanupVehicle() {
 		// check if vehicle is occupied
 		if (GetVehicleNumberOfPassengers(handle) > 0 || IsVehicleSeatFree(handle, -1) == false) {
 			const modelHash = GetEntityModel(handle);
-			const numSeats = GetVehicleModelNumberOfSeats(modeHash);
+			const numSeats = GetVehicleModelNumberOfSeats(modelHash);
 			
 			// ignore if any passenger is alive
 			// ignore if any passenger is a player
